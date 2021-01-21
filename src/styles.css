@@ -7,20 +7,20 @@ div.div-my-bg {
 
 
 div.div-my-footer {
-    padding-top:100px;
-    padding-bottom:50px;
+    padding-top:10%;
+    padding-bottom:5%;
 }
 
 div.div-my-header {
-    padding-top: 50px;
-    padding-bottom:60px;
+    padding-top: 5%;
+    padding-bottom:6%;
 }
 
 div.text-my-default {
     font-family:candara;
     font-size:x-large;
-    padding-left: 300px;
-    padding-right:300px;
+    padding-left: 30%;
+    padding-right:30%;
     color:rgb(240, 240, 255);
     float:right;
 }
@@ -29,14 +29,14 @@ div.copyright {
     font-family:candara;
     font-size:large;
     color:rgb(240, 240, 255);
-    padding-right:30px;
+    padding-right:3%;
 }
 
 a.text-my-link {
     color:rgb(240, 240, 255);
     font-family:candara;
     font-size:x-large;
-    padding-left:35px;
-    padding-right: 20px;
-    padding-top: 20px;
+    padding-left:5%;
+    padding-right: 5%;
+    padding-top: 2%;
 }
