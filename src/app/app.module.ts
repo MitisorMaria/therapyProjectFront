@@ -26,7 +26,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDVe7M12AbrcPXpDDMqJu_qz--pmgyhSKA'
+      apiKey: 'AIzaSyDeLJL9E8qPjdUQj7QTSxZkiQKBIBLOo-I'
     })
   ],
   providers: [],
