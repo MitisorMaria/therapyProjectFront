@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+div.div-my-bg {
+    background-image: url("assets/images/bg-fresh.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;;
+}
+
+
+div.div-my-footer {
+    padding-top:100px;
+    padding-bottom:50px;
+}
+
+div.div-my-header {
+    padding-top: 50px;
+    padding-bottom:60px;
+}
+
+div.text-my-default {
+    font-family:candara;
+    font-size:x-large;
+    padding-left: 300px;
+    padding-right:300px;
+    color:rgb(240, 240, 255);
+    float:right;
+}
+
+div.copyright {
+    font-family:candara;
+    font-size:large;
+    color:rgb(240, 240, 255);
+    padding-right:30px;
+}
+
+a.text-my-link {
+    color:rgb(240, 240, 255);
+    font-family:candara;
+    font-size:x-large;
+    padding-left:35px;
+    padding-right: 20px;
+    padding-top: 20px;
+}
