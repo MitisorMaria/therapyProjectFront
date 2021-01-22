@@ -1,4 +1,11 @@
 <div class="text-my-default">
-    <p>blog works!</p>
+    <p>Articles:</p>
+    <div *ngFor="let blogThread of blogThreads;">
+        <hr>
+        <u><a [title]="blogThread.title" [routerLink]="['/one-thread', blogThread.title]" style="color:rgb(240, 240, 255)">{{blogThread.title}}</a></u>
+        <br/>
+        Posted at: {{blogThread.dateTime}}
+        <hr>
+    </div>
 </div>
 
