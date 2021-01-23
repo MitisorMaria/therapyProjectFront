@@ -15,6 +15,8 @@ import { CommentService } from'./comment.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { OneThreadComponent } from './one-thread/one-thread.component';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { OneThreadComponent } from './one-thread/one-thread.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    NgbModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDeLJL9E8qPjdUQj7QTSxZkiQKBIBLOo-I'
     })

@@ -1,5 +1,30 @@
 <div class="text-my-default">
     <h3>{{blogThread.title}}</h3>
+    <hr>
     <p>{{blogThread.text}}</p>
-working!!
+    <hr>
+    <h3>Comments: </h3>
+    <hr>
+    <div *ngFor="let comment of commentsForThread;">
+    {{comment.name}} on {{comment.dateTime}} :
+    <br>
+    {{comment.text}}
+    <hr>
+    </div>
+    <h3>Add a comment:</h3>
+    <form #addcomment = "ngForm" (ngSubmit) = "addButtonClicked(addcomment.value);addcomment.reset();">
+        <input type="text" class="form-control" style="width:60%;font-family:candara;font-size:large;border-color:lightgray" placeholder="Your name..." name="name" ngModel>
+        <br/>
+        <textarea style="width:60%;height:30%;font-family:candara;font-size:large;border-color:lightgray"  class="form-control" placeholder="Comment..." name="comment" ngModel></textarea>
+        <br/>
+      <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Comment</button>
+      <div [ngSwitch]="commentSuccessfullyAdded" style="padding-left:10%;padding-right:10%">
+        <!-- the same view can be shown in more than one case -->
+        <ngb-alert type="success" (closed)="closeAlert()" *ngSwitchCase="true" role="alert">Comment posted!</ngb-alert>
+        
+        <ngb-alert type="danger" (closed)="closeAlert()" *ngSwitchCase="false" role="alert">There was an error adding your comment. Please try again.</ngb-alert>
+        <!--default case when there are no matches -->
+        <div *ngSwitchDefault></div>
+      </div>
+   </form>
 </div>
