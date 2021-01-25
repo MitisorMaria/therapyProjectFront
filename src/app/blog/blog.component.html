@@ -1,11 +1,23 @@
 <div class="text-my-default">
     <p>Articles:</p>
-    <div *ngFor="let blogThread of blogThreads;">
+    <div *ngFor="let blogThread of blogThreadsShown;">
         <hr>
         <u><a [title]="blogThread.title" [routerLink]="['/one-thread', blogThread.title]" style="color:rgb(240, 240, 255)">{{blogThread.title}}</a></u>
         <br/>
         Posted at: {{blogThread.dateTime}}
         <hr>
+    </div> 
+</div>
+
+<div class="row button-row">
+    <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="onClickPrevious()" style="width:130%;background-color:gray;font-family:candara;border-style:none">Load prev page</button>        
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">Page {{pageNo + 1}} of {{totalPages}}</div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <button type="button" class="btn btn-primary" (click)="onClickNext()" style="width:130%;background-color:gray;font-family:candara;border-style:none">Load next page</button>
     </div>
 </div>
 

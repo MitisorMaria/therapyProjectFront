@@ -51,13 +51,21 @@ export class OneThreadComponent implements OnInit {
   
   }
 
+  convertUTCDateToLocalDate(date : Date) {
+    var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
+
+    newDate.setHours(hours - offset);
+
+    return newDate;   
+}
+
   addButtonClicked(data : any){    
-    //const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric'};
-    let commentDate = (new Date()).toLocaleString();
-    /*let commentDateFormatted = commentDate.getFullYear() + "-" + commentDate.getMonth() + "-" + commentDate.getUTCDay()
-    + "-" + commentDate.getUTCHours();*/
+    let commentDate = this.convertUTCDateToLocalDate(new Date());
     let comment = {
-      "dateTime" : commentDate,//commentDate.getDate().toLocaleString(),
+      "dateTime" : commentDate,
       "name" : data.name,
       "text" : data.comment,
       "threadId" : this.blogThread.id
