@@ -70,7 +70,6 @@ export class OneThreadComponent implements OnInit {
       "text" : data.comment,
       "threadId" : this.blogThread.id
     };
-    alert(comment.dateTime);
     this.commentService.addAComment(comment).subscribe(
       valComm => {
         this.commentSuccessfullyAdded = true;

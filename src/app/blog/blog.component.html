@@ -2,7 +2,7 @@
     <p>Search article containing text...</p>
     <form #search = "ngForm" (ngSubmit) = "searchBlogThreads(search.value);search.reset();">
         <input type="text" class="form-control" style="width:60%;font-family:candara;font-size:large;border-color:lightgray" placeholder="Search..." name="text" ngModel>
-      <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Search</button>
+      <button type="submit" class="btn btn-primary my-button"  value="submit">Search</button>
    </form>
     <p>Articles:</p>
     <div *ngFor="let blogThread of blogThreadsShown;">
@@ -16,13 +16,13 @@
 
 <div class="row button-row">
     <div class="col-md-2">
-        <button type="button" class="btn btn-primary" (click)="onClickPrevious()" style="width:130%;background-color:gray;font-family:candara;border-style:none">Load prev page</button>        
+        <button type="button" class="btn btn-primary my-button" (click)="onClickPrevious()" style="width:130%;">Load prev page</button>        
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-2">Page {{pageNo + 1}} of {{totalPages}}</div>
     <div class="col-md-1"></div>
     <div class="col-md-2">
-        <button type="button" class="btn btn-primary" (click)="onClickNext()" style="width:130%;background-color:gray;font-family:candara;border-style:none">Load next page</button>
+        <button type="button" class="btn btn-primary my-button" (click)="onClickNext()" style="width:130%;">Load next page</button>
     </div>
 </div>
 

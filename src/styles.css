@@ -47,6 +47,12 @@ img.center {
     margin-right: auto;
   }
 
+  button.my-button {
+    background-color:darkblue;
+    font-family:candara;
+    border-style:none;
+  }
+
   div.button-row {
     font-family:candara;
     font-size:x-large;
