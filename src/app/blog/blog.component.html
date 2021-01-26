@@ -1,4 +1,9 @@
 <div class="text-my-default">
+    <p>Search article containing text...</p>
+    <form #search = "ngForm" (ngSubmit) = "searchBlogThreads(search.value);search.reset();">
+        <input type="text" class="form-control" style="width:60%;font-family:candara;font-size:large;border-color:lightgray" placeholder="Search..." name="text" ngModel>
+      <button type="submit" class="btn btn-primary" style="background-color:gray;font-family:candara;border-style:none" value="submit">Search</button>
+   </form>
     <p>Articles:</p>
     <div *ngFor="let blogThread of blogThreadsShown;">
         <hr>

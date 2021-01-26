@@ -12,4 +12,9 @@ export class ThreadService {
     let apiurl = 'http://localhost:8080/thread'
     return this.http.get(apiurl);
   }
+
+  searchThreads(text: String) {
+    let apiurl = "http://localhost:8080/elasticsearch/thread?text=" + text;
+    return this.http.get(apiurl);
+  }
 }

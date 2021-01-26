@@ -52,6 +52,21 @@ export class BlogComponent implements OnInit {
     return this.blogThreads;
   }
 
+  searchBlogThreads(data: any) {
+    this.threadService.searchThreads(data.text).subscribe(
+      val => {
+        this.blogThreads = val;
+        this.blogThreadsShown = this.blogThreads.slice(this.pageNo, 4);
+        this.totalPages = Math.floor(this.blogThreads.length/4) + 1;
+      },
+      response => {
+        alert("Error!");
+      },
+      () => {
+      }
+ );
+  }
+
   onClickNext(): void {
     if (this.pageNo * 4 + 4 <= this.blogThreads.length){
       this.pageNo++;
