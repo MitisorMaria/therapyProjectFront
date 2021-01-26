@@ -8,17 +8,19 @@
     <h3>Comments: </h3>
     <hr>
     <div *ngFor="let comment of commentsForThread;">
-    {{comment.name}} on {{comment.dateTime}} :
+    <u><u style="color: rgb(100, 170, 255);">{{comment.name}}</u> on {{comment.dateTime}} :</u>
     <br>
     {{comment.text}}
     <hr>
     </div>
     <h3>Add a comment:</h3>
     <form #addcomment = "ngForm" (ngSubmit) = "addButtonClicked(addcomment.value);addcomment.reset();">
-        <input type="text" class="form-control" style="width:60%;font-family:candara;font-size:large;border-color:lightgray" placeholder="Your name..." name="name" ngModel>
+        <input type="text" class="form-control" style="width:60%;font-family:candara;font-size:large;border-color:lightgray" placeholder={{getPlaceholder()}} name="name" ngModel>
         <br/>
         <textarea style="width:60%;height:30%;font-family:candara;font-size:large;border-color:lightgray"  class="form-control" placeholder="Comment..." name="comment" ngModel></textarea>
         <br/>
+      Remember me  <input type="checkbox" name="remember" ngModel>
+      <br/>
       <button type="submit" class="btn btn-primary my-button" value="submit">Comment</button>
       <br>
       <a href="/one-thread/{{blogThread.title}}">Back to top</a>

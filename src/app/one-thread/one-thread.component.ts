@@ -48,8 +48,16 @@ export class OneThreadComponent implements OnInit {
     () => {
     }
 );
-  
+
   }
+
+
+  getPlaceholder() {
+    if (localStorage.getItem("name") != null) {
+      return localStorage.getItem("name");
+    } else return "Your name...";
+  }
+
 
   convertUTCDateToLocalDate(date : Date) {
     var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
@@ -64,9 +72,18 @@ export class OneThreadComponent implements OnInit {
 
   addButtonClicked(data : any){    
     let commentDate = this.convertUTCDateToLocalDate(new Date());
+    let name;
+    if ((data.name == null || !(data.name.length > 0)) && localStorage.getItem("name") !=null) {
+      name = localStorage.getItem("name");
+    } else if ((data.name == null || !(data.name.length > 0)) && localStorage.getItem("name") == null){
+      name = "anonymous";
+    } else if (data.name != null) {
+      name = data.name;
+    }
+
     let comment = {
       "dateTime" : commentDate,
-      "name" : data.name,
+      "name" : name,
       "text" : data.comment,
       "threadId" : this.blogThread.id
     };
@@ -80,7 +97,10 @@ export class OneThreadComponent implements OnInit {
       () => {
       }
     );
-    
+
+    if(data.remember) {
+      localStorage.setItem("name", data.name);
+    }
   }
 
 
