@@ -36,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDeLJL9E8qPjdUQj7QTSxZkiQKBIBLOo-I'
+      apiKey: '######################' //not real
     })
   ],
   providers: [ThreadService, CommentService, BlogComponent],
